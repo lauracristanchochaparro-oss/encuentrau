@@ -1,0 +1,10 @@
+
+{
+  "name": "EncuentraU - Objetos Perdidos",
+  "short_name": "EncuentraU",
+  "description": "Sistema universitario para consultar objetos perdidos y encontrados.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f4f7fb",
+  "theme_color": "#123b5d"
+}

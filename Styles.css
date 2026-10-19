@@ -1,0 +1,555 @@
+
+/* ========================================
+   CONFIGURACIÓN GENERAL
+======================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --azul-usta: #17345a;
+  --azul-profundo: #102541;
+  --dorado-usta: #c9a23f;
+  --dorado-claro: #f8f1df;
+  --blanco: #ffffff;
+  --fondo: #f5f7fb;
+  --texto: #27364a;
+  --texto-suave: #738096;
+  --borde: #e2e7ef;
+  --verde: #176640;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+/* ========================================
+   ENCABEZADO Y LOGO
+======================================== */
+
+.encabezado {
+  background: var(--blanco);
+  color: var(--azul-usta);
+  padding: 18px 6%;
+  border-bottom: 3px solid var(--dorado-usta);
+  box-shadow: 0 4px 18px rgba(16, 37, 65, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.marca-universidad {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+
+.logo-usta {
+  display: block;
+  width: 140px;
+  min-width: 140px;
+  max-width: 140px;
+  height: 58px;
+  max-height: 58px;
+  object-fit: contain;
+  flex: 0 0 140px;
+}
+
+.separador {
+  width: 2px;
+  height: 48px;
+  background: var(--dorado-usta);
+  flex-shrink: 0;
+}
+
+.marca-proyecto {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nombre-proyecto {
+  color: var(--azul-usta);
+  font-size: 29px;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+}
+
+.subtitulo-proyecto {
+  color: var(--texto-suave);
+  font-size: 12px;
+}
+
+.etiqueta-campus {
+  color: var(--azul-usta);
+  background: var(--dorado-claro);
+  padding: 9px 12px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* ========================================
+   CONTENIDO PRINCIPAL
+======================================== */
+
+.contenedor {
+  width: min(1100px, 92%);
+  margin: 32px auto;
+}
+
+/* ========================================
+   BIENVENIDA Y BUSCADOR
+======================================== */
+
+.bienvenida {
+  background: linear-gradient(120deg, var(--azul-profundo), #234e79);
+  color: var(--blanco);
+  border: 1px solid #294c70;
+  border-bottom: 5px solid var(--dorado-usta);
+  border-radius: 20px;
+  padding: 42px 38px;
+  margin-bottom: 28px;
+  box-shadow: 0 14px 32px rgba(16, 37, 65, 0.12);
+}
+
+.bienvenida h1 {
+  max-width: 650px;
+  font-size: clamp(27px, 4vw, 39px);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  font-weight: 800;
+}
+
+.bienvenida p {
+  max-width: 620px;
+  color: #e2eaf4;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+/* ========================================
+   CAMPOS DE ENTRADA
+======================================== */
+
+input,
+select {
+  display: block;
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  font: inherit;
+  background: var(--blanco);
+  color: var(--texto);
+  margin-top: 6px;
+}
+
+.bienvenida input {
+  max-width: 680px;
+  min-height: 54px;
+  padding: 15px;
+  border: 2px solid transparent;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid var(--dorado-usta);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   FILTROS
+======================================== */
+
+.filtros {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 680px;
+  margin-top: 12px;
+}
+
+.filtros select {
+  min-height: 46px;
+}
+
+/* ========================================
+   INDICADORES Y TARJETAS
+======================================== */
+
+.resumen {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin: 28px 0;
+}
+
+.tarjeta {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-top: 4px solid var(--dorado-usta);
+  border-radius: 15px;
+  padding: 24px;
+  box-shadow: 0 6px 22px rgba(16, 37, 65, 0.04);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px rgba(16, 37, 65, 0.09);
+}
+
+.tarjeta span {
+  display: block;
+  color: var(--texto-suave);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.tarjeta strong {
+  display: block;
+  color: var(--azul-usta);
+  font-size: 36px;
+  font-weight: 800;
+  margin-top: 6px;
+}
+
+/* ========================================
+   PANELES
+======================================== */
+
+.panel {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 18px;
+  padding: 30px;
+  margin-bottom: 26px;
+  box-shadow: 0 6px 22px rgba(16, 37, 65, 0.04);
+}
+
+.panel h2 {
+  color: var(--azul-usta);
+  font-size: 23px;
+  font-weight: 800;
+  padding-bottom: 13px;
+  border-bottom: 1px solid var(--borde);
+  margin-bottom: 22px;
+}
+
+/* ========================================
+   FORMULARIO DE REGISTRO
+======================================== */
+
+#formulario {
+  display: grid;
+  gap: 12px;
+}
+
+#formulario label {
+  color: var(--azul-usta);
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 6px;
+}
+
+#formulario input,
+#formulario select {
+  min-height: 48px;
+  border: 1px solid #d5deea;
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: #fcfdff;
+}
+
+#formulario input[type="file"] {
+  min-height: auto;
+  padding: 12px;
+  cursor: pointer;
+}
+
+#vistaPreviaFoto {
+  padding: 12px;
+  background: var(--fondo);
+  border: 1px dashed var(--borde);
+  border-radius: 10px;
+}
+
+#vistaPreviaFoto[hidden] {
+  display: none;
+}
+
+#vistaPreviaFoto p {
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: var(--texto-suave);
+}
+
+#imagenPrevia {
+  display: block;
+  width: auto;
+  max-width: 200px;
+  max-height: 200px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+#formulario input:focus,
+#formulario select:focus {
+  outline: none;
+  border-color: var(--dorado-usta);
+  box-shadow: 0 0 0 3px rgba(201, 162, 63, 0.15);
+}
+
+/* ========================================
+   BOTONES
+======================================== */
+
+button {
+  background: var(--azul-usta);
+  color: var(--blanco);
+  border: 1px solid var(--azul-usta);
+  border-radius: 10px;
+  padding: 13px 20px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 14px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+  background: var(--azul-profundo);
+  border-color: var(--dorado-usta);
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+  transform: none;
+}
+
+/* ========================================
+   OBJETOS REGISTRADOS
+======================================== */
+
+.objeto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-left: 4px solid var(--dorado-usta);
+  border-radius: 13px;
+  padding: 20px;
+  margin-bottom: 14px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.objeto:hover {
+  box-shadow: 0 8px 20px rgba(16, 37, 65, 0.07);
+  transform: translateY(-2px);
+}
+
+.objeto img {
+  display: block;
+  max-width: 220px;
+  max-height: 220px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.objeto h3 {
+  color: var(--azul-usta);
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.objeto p {
+  color: var(--texto-suave);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.estado {
+  display: inline-block;
+  margin-top: 10px;
+  background: #e5f4eb;
+  color: var(--verde);
+  padding: 5px 11px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.estado.entregado {
+  background: var(--dorado-claro);
+  color: #765b17;
+}
+
+.vacio {
+  color: var(--texto-suave);
+  padding: 16px 0;
+}
+
+/* ========================================
+   MENSAJES
+======================================== */
+
+#mensaje {
+  margin-top: 12px;
+  color: var(--verde);
+  background: #eef8f1;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-weight: 600;
+}
+
+/* ========================================
+   PIE DE PÁGINA
+======================================== */
+
+footer {
+  background: var(--azul-profundo);
+  color: #e3eaf3;
+  text-align: center;
+  border-top: 3px solid var(--dorado-usta);
+  padding: 25px 15px;
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+/* ========================================
+   ADAPTACIÓN A CELULARES
+======================================== */
+
+@media (max-width: 650px) {
+  .encabezado {
+    padding: 16px 5%;
+    gap: 14px;
+  }
+
+  .marca-universidad {
+    gap: 10px;
+  }
+
+  .logo-usta {
+    width: 110px;
+    min-width: 110px;
+    max-width: 110px;
+    height: 48px;
+    max-height: 48px;
+    flex: 0 0 110px;
+  }
+
+  .separador {
+    height: 42px;
+  }
+
+  .nombre-proyecto {
+    font-size: 22px;
+  }
+
+  .subtitulo-proyecto {
+    font-size: 10px;
+  }
+
+  .etiqueta-campus {
+    font-size: 9px;
+  }
+
+  .contenedor {
+    width: 92%;
+    margin: 20px auto;
+  }
+
+  .bienvenida {
+    padding: 28px 20px;
+  }
+
+  .filtros {
+    grid-template-columns: 1fr;
+  }
+
+  .resumen {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .tarjeta {
+    padding: 16px 20px;
+  }
+
+  .tarjeta strong {
+    font-size: 26px;
+  }
+
+  .panel {
+    padding: 20px;
+  }
+
+  .objeto {
+    padding: 16px;
+  }
+
+  .objeto img {
+    max-width: 100%;
+    max-height: 220px;
+  }
+}
+
+/* CORRECCIÓN DEL LOGO Y ENCABEZADO */
+header.encabezado {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 18px 6% !important;
+  min-height: 0 !important;
+}
+
+header.encabezado .marca-universidad {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  min-width: 0 !important;
+}
+
+header.encabezado img.logo-usta {
+  display: block !important;
+  width: 140px !important;
+  min-width: 140px !important;
+  max-width: 140px !important;
+  height: 58px !important;
+  min-height: 0 !important;
+  max-height: 58px !important;
+  object-fit: contain !important;
+  flex: 0 0 140px !important;
+}
+
+@media (max-width: 650px) {
+  header.encabezado img.logo-usta {
+    width: 110px !important;
+    min-width: 110px !important;
+    max-width: 110px !important;
+    height: 48px !important;
+    max-height: 48px !important;
+    flex: 0 0 110px !important;
+  }
+}

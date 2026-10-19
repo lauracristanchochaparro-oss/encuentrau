@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#123B5D">
+  <title>EncuentraU | Objetos perdidos</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+  <header class="encabezado">
+    <div class="marca-universidad">
+      <img
+        src="logo-usta.png"
+        alt="Universidad Santo Tomás, Villavicencio"
+        class="logo-usta"
+      >
+      <div class="separador"></div>
+      <div class="marca-proyecto">
+        <span class="nombre-proyecto">EncuentraU</span>
+        <span class="subtitulo-proyecto">Objetos perdidos y encontrados</span>
+      </div>
+    </div>
+    <span class="etiqueta-campus">SECCIONAL VILLAVICENCIO</span>
+  </header>
+
+  <main class="contenedor">
+
+    <section class="bienvenida">
+      <h1>¿Perdiste algo en la universidad?</h1>
+      <p>Busca tus pertenencias o consulta los objetos encontrados.</p>
+
+      <input
+        id="busqueda"
+        type="search"
+        placeholder="Buscar: documento, llaves, bolso..."
+        aria-label="Buscar objetos"
+      >
+    </section>
+
+    <section class="resumen">
+      <article class="tarjeta">
+        <span>Objetos registrados</span>
+        <strong id="total">0</strong>
+      </article>
+
+      <article class="tarjeta">
+        <span>Disponibles</span>
+        <strong id="disponibles">0</strong>
+      </article>
+
+      <article class="tarjeta">
+        <span>Entregados</span>
+        <strong id="entregados">0</strong>
+      </article>
+    </section>
+
+    <section class="panel">
+      <h2>Objetos encontrados</h2>
+      <div id="listaObjetos"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Registrar objeto encontrado</h2>
+
+      <form id="formulario">
+
+        <label for="nombre">Nombre del objeto</label>
+        <input
+          id="nombre"
+          name="nombre"
+          type="text"
+          required
+          placeholder="Ej. Llaves"
+        >
+
+        <label for="foto">Fotografía del objeto (opcional)</label>
+        <input
+          id="foto"
+          name="foto"
+          type="file"
+          accept="image/jpeg,image/png,image/webp"
+        >
+
+        <div id="vistaPreviaFoto" hidden>
+          <p>Vista previa de la fotografía:</p>
+          <img
+            id="imagenPrevia"
+            alt="Vista previa de la fotografía seleccionada"
+            style="max-width: 200px; max-height: 200px; object-fit: contain; border-radius: 8px;"
+          >
+        </div>
+
+        <label for="categoria">Categoría</label>
+        <select id="categoria" name="categoria" required>
+          <option value="">Selecciona una categoría</option>
+          <option>Documentos</option>
+          <option>Tecnología</option>
+          <option>Accesorios</option>
+          <option>Ropa y bolsos</option>
+          <option>Otros</option>
+        </select>
+
+        <label for="lugar">Lugar donde se encontró</label>
+        <input
+          id="lugar"
+          name="lugar"
+          type="text"
+          required
+          placeholder="Ej. Biblioteca"
+        >
+
+        <label for="fecha">Fecha del hallazgo</label>
+        <input
+          id="fecha"
+          name="fecha"
+          type="date"
+          required
+        >
+
+        <button type="submit">Registrar objeto</button>
+      </form>
+
+      <p id="mensaje" role="status"></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>EncuentraU · Prototipo académico</p>
+  </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./supabase-config.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>
